@@ -1,7 +1,4 @@
 var Queue = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
-
   var addStorage = function() {
     storage = {};
     return {};
@@ -16,7 +13,7 @@ var queueMethods = {
     var length = Object.keys(storage).length;
     if (length !== 0) {
       for (let i = 0; i < length; i++) {
-        storage[length - i] = storage[length - i -1];
+        storage[length - i] = storage[length - i - 1];
       }
     }
     storage[0] = value;
