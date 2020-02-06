@@ -1,5 +1,5 @@
 var Queue = function() {
-  var obj = Object.create(Queue.prototype);
+  var obj = Object.create(queueMethods);
   obj.storage = {};
   return obj;
 };
@@ -31,8 +31,9 @@ var Queue = function() {
 // _.extend(Queue.prototype, queueMethods);
 
 var queueMethods = {};
+//Queue.queueMethods = queueMethods;
 
-Queue.prototype.enqueue = function(value) {
+queueMethods.enqueue = function(value) {
   var length = Object.keys(this.storage).length;
   if (length !== 0) {
     for (let i = 0; i < length; i++) {
@@ -42,7 +43,7 @@ Queue.prototype.enqueue = function(value) {
   this.storage[0] = value;
 };
 
-Queue.prototype.dequeue = function() {
+queueMethods.dequeue = function() {
   var length = Object.keys(this.storage).length;
   if (length === 0) {
     return undefined;
@@ -52,6 +53,6 @@ Queue.prototype.dequeue = function() {
   return lastOut;
 };
 
-Queue.prototype.size = function() {
+queueMethods.size = function() {
   return Object.keys(this.storage).length;
 };
