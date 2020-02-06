@@ -12,11 +12,11 @@ var Stack = function() {
 
   someInstance.pop = function() {
     var length = Object.keys(storage).length;
-    if (length === 0){
+    if (length === 0) {
       return undefined;
     }
-    var lastOut = storage[length -1];
-    delete storage[length-1];
+    var lastOut = storage[length - 1];
+    delete storage[length - 1];
     return lastOut;
   };
 
