@@ -10,7 +10,7 @@ var Queue = function() {
     var length = Object.keys(storage).length;
     if (length !== 0) {
       for (let i = 0; i < length; i++) {
-        storage[length - i] = storage[length - i -1];
+        storage[length - i] = storage[length - i - 1];
       }
     }
     storage[0] = value;
@@ -21,8 +21,8 @@ var Queue = function() {
     if (length === 0) {
       return undefined;
     }
-    var lastOut = storage[length-1];
-    delete storage[length-1];
+    var lastOut = storage[length - 1];
+    delete storage[length - 1];
     return lastOut;
   };
 
